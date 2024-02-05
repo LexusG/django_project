@@ -6,3 +6,7 @@ from django.http import HttpResponse
 def home(request):
     return HttpResponse('<h1>Blog Home</h1>')
 # This function handles the traffic from the blog's homepage 
+
+def about(request):
+    return HttpResponse('<h1> About Page</h1>')
+# This function handles the traffic from the blog's about page
