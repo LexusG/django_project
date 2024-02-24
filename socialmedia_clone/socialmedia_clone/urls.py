@@ -18,13 +18,30 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from users import views as user_views
+import logging
+
+logger = logging.getLogger(__name__)
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
+
+def my_view(request):
+    logger.debug('This is a debug message')
+    logger.info('This is an info message')
+    logger.warning('This is a warning message')
+    logger.error('This is an error message')
+    logger.critical('This is a critical message')
+    # Your view logic here
+    pass
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/', user_views.register, name='register'),
-    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
+    path('register/', user_views.register, name='register',),
+    path('profile/', user_views.profile, name='profile',),
+    path('login/', auth_views.LoginView.as_view(template_name='users/login.html',), name='login'),
+    path('logout/', user_views.my_logout, name='logout'),
     path('', include('blog.urls')),
+    path('my-view/', my_view, name='my-view'),
     
 
 ]
