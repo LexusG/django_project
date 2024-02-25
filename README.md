@@ -14,7 +14,8 @@ This project aims to provide a robust platform for creating and managing a perso
 
 ### Technologies Used
 - Django: A high-level Python web framework that encourages rapid development and clean, pragmatic design.
-- HTML/CSS: Frontend languages used for structuring and styling the website.
+- Bootstrap 5: Frontend framework used for styling the website, providing a responsive and modern design.
+- HTML: Frontend languages used for structuring.
 - SQLite: Lightweight, serverless database engine used for data storage during development.
 - Other Django Libraries: Leveraged various Django libraries for tasks such as form handling, authentication, and database management.
 
