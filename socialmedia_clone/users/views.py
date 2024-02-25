@@ -24,7 +24,7 @@ def register(request):
 def my_logout(request):
     logger.debug(f"Request data: {request}")
     logout(request)
-    messages.success(request, f'You were logged out successfully.')
+    messages.success(request, f'You were logged out successfully!.')
     return redirect('login')
       
 @login_required
